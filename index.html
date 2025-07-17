@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etay Naor - Creative Strategy Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .slide {
+            width: 100vw;
+            height: 100vh;
+            padding: 60px;
+            margin: 0;
+            background: white;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            scroll-snap-align: start;
+        }
+
+        .container {
+            height: 100vh;
+            overflow-y: scroll;
+            scroll-snap-type: y mandatory;
+        }
+
+        /* Title Slide */
+        .title-slide {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            color: white;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 120px 80px;
+            position: relative;
+        }
+
+        .title-slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%);
+            opacity: 0.3;
+        }
+
+        .title-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .main-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 120px;
+            font-weight: 900;
+            letter-spacing: -4px;
+            line-height: 0.9;
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 40px;
+        }
+
+        .subtitle {
+            font-size: 36px;
+            font-weight: 300;
+            color: #e5e7eb;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .tagline {
+            font-size: 24px;
+            font-weight: 400;
+            color: #9ca3af;
+            max-width: 600px;
+            line-height: 1.4;
+        }
+
+        /* About Slide */
+        .about-slide {
+            padding: 80px;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 72px;
+            font-weight: 800;
+            color: #4f46e5;
+            margin-bottom: 60px;
+            letter-spacing: -2px;
+        }
+
+        .role-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 60px;
+            letter-spacing: 0.5px;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .about-text h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 40px;
+            line-height: 1.2;
+        }
+
+        .about-text p {
+            font-size: 20px;
+            color: #475569;
+            margin-bottom: 30px;
+            line-height: 1.7;
+        }
+
+        .photo-placeholder {
+            width: 100%;
+            height: 500px;
+            background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #64748b;
+            font-size: 18px;
+            font-weight: 500;
+            border: 2px dashed #94a3b8;
+        }
+
+        /* Portfolio Divider */
+        .portfolio-divider {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            color: white;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .portfolio-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 96px;
+            font-weight: 900;
+            letter-spacing: -3px;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .portfolio-subtitle {
+            font-size: 32px;
+            font-weight: 300;
+            color: #cbd5e1;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Case Study Slides */
+        .case-study {
+            padding: 80px;
+            background: white;
+            overflow-y: auto;
+        }
+
+        .brand-header {
+            margin-bottom: 60px;
+        }
+
+        .brand-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 64px;
+            font-weight: 900;
+            color: #0f172a;
+            margin-bottom: 20px;
+            letter-spacing: -2px;
+        }
+
+        .case-title {
+            font-size: 32px;
+            font-weight: 400;
+            color: #64748b;
+            margin-bottom: 30px;
+            line-height: 1.3;
+        }
+
+        .role-tag {
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        .case-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .case-details {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        .detail-section h4 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #4f46e5;
+            margin-bottom: 20px;
+        }
+
+        .detail-section ul {
+            list-style: none;
+        }
+
+        .detail-section li {
+            font-size: 16px;
+            color: #475569;
+            margin-bottom: 12px;
+            padding-left: 20px;
+            position: relative;
+            line-height: 1.5;
+        }
+
+        .detail-section li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #4f46e5;
+            font-weight: 600;
+        }
+
+        .visual-placeholder {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #64748b;
+            font-size: 16px;
+            border: 2px dashed #cbd5e1;
+        }
+
+        /* Results Section */
+        .results-section {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            border-radius: 25px;
+            padding: 50px;
+            color: white;
+        }
+
+        .results-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            color: white;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .result-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 30px 25px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .result-number {
+            font-size: 24px;
+            font-weight: 800;
+            color: #fbbf24;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+
+        .result-description {
+            font-size: 14px;
+            color: #cbd5e1;
+            line-height: 1.4;
+        }
+
+        /* Thank You Slide */
+        .thank-you-slide {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .thank-you-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .thank-you-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 96px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 60px;
+            letter-spacing: -3px;
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 50px;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            font-size: 20px;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .contact-message {
+            font-size: 18px;
+            color: #cbd5e1;
+            margin-top: 30px;
+            font-style: italic;
+        }
+
+        .navigation {
+            position: fixed;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .nav-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-dot.active {
+            background: #4f46e5;
+            transform: scale(1.2);
+        }
+
+        @media (max-width: 768px) {
+            .main-title { font-size: 60px; }
+            .subtitle { font-size: 24px; }
+            .section-title { font-size: 48px; }
+            .brand-name { font-size: 40px; }
+            .case-title { font-size: 24px; }
+            .about-content { grid-template-columns: 1fr; }
+            .case-content { grid-template-columns: 1fr; }
+            .results-grid { grid-template-columns: repeat(2, 1fr); }
+            .slide { padding: 40px 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Title Slide -->
+        <div class="slide title-slide">
+            <div class="title-content">
+                <h1 class="main-title">ETAY NAOR</h1>
+                <h2 class="subtitle">Creative Strategy Portfolio</h2>
+                <p class="tagline">Strategic Creative Leadership & Viral Campaign Innovation</p>
+            </div>
+        </div>
+
+        <!-- About Slide -->
+        <div class="slide about-slide">
+            <h2 class="section-title">ABOUT<br>ETAY</h2>
+            <div class="role-badge">Partner & Lead Strategist at Allenby Concept House</div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>15+ Years Leading Social-First Creative Strategy for Global Brands</h3>
+                    <p>Over the past 15+ years, I've been sharing aha moments with companies, startups, and movements - and turning that into bold execution. I've worked with major brands like Spotify, Budweiser, and SodaStream, early-stage startups, and national campaigns.</p>
+                    <p>Skilled at translating complex ideas into sharp, actionable social media strategy and creative execution. Fully embedded in AI workflows. Geek.</p>
+                </div>
+                <div class="photo-placeholder">
+                    [INSERT YOUR PROFESSIONAL PHOTO]
+                </div>
+            </div>
+        </div>
+
+        <!-- Portfolio Divider -->
+        <div class="slide portfolio-divider">
+            <h2 class="portfolio-title">CAMPAIGN PORTFOLIO</h2>
+            <p class="portfolio-subtitle">Viral Successes & Creative Leadership</p>
+        </div>
+
+        <!-- SodaStream Case Study -->
+        <div class="slide case-study">
+            <div class="brand-header">
+                <h2 class="brand-name">SODASTREAM</h2>
+                <h3 class="case-title">"Shame or Glory" Campaign - Contributing to $2.3B PepsiCo Acquisition</h3>
+                <div class="role-tag">My Role: Creative Strategist & Campaign Development</div>
+            </div>
+
+            <div class="case-content">
+                <div class="case-details">
+                    <div class="detail-section">
+                        <h4>The Challenge</h4>
+                        <ul>
+                            <li>Transform SodaStream through social media strategy and strategic repositioning</li>
+                            <li>Moving from a utilitarian brand selling sweetened soda alternatives to a premium environmental lifestyle choice</li>
+                        </ul>
+                    </div>
+
+                    <div class="detail-section">
+                        <h4>Creative Strategy</h4>
+                        <ul>
+                            <li>Strategic repositioning: shifted brand perception from budget sweetened soda maker to premium sparkling water environmental champion</li>
+                            <li>Social-first content strategy with bold "F*ck Plastic Bottles" messaging campaign</li>
+                            <li>Smart casting strategy: leveraged Game of Thrones popularity through social media amplification</li>
+                            <li>Platform-native creative adaptation across social channels to maximize viral potential</li>
+                        </ul>
+                    </div>
+
+                    <div class="detail-section">
+                        <h4>Campaign Elements</h4>
+                        <ul>
+                            <li>Award-winning "Shame or Glory" viral video</li>
+                            <li>Celebrity spokesperson integration (Game of Thrones)</li>
+                            <li>Paris Hilton product collaboration campaigns</li>
+                            <li>Provocative environmental messaging</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="visual-placeholder">
+                    SodaStream Campaign Visual
+                </div>
+            </div>
+
+            <div class="results-section">
+                <h4 class="results-title">Results</h4>
+                <div class="results-grid">
+                    <div class="result-card">
+                        <div class="result-number">Viral Success</div>
+                        <div class="result-description">"Shame or Glory" achieved massive viral reach</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-number">$2.3B Acquisition</div>
+                        <div class="result-description">strategic repositioning contributed to PepsiCo acquisition</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-number">Award-Winning</div>
+                        <div class="result-description">recognized campaign excellence</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-number">Brand Elevation</div>
+                        <div class="result-description">transformed from utility to premium lifestyle brand</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Thank You Slide -->
+        <div class="slide thank-you-slide">
+            <div class="thank-you-content">
+                <h2 class="thank-you-title">THANK YOU</h2>
+                
+                <div class="contact-card">
+                    <div class="contact-info">etay@etaynaor.com</div>
+                    <div class="contact-info">+49 XXX XXX XXXX</div>
+                    <div class="contact-info">Berlin, Germany</div>
+                    <div class="contact-message">Looking forward to hearing from you</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="navigation">
+        <div class="nav-dot active"></div>
+        <div class="nav-dot"></div>
+        <div class="nav-dot"></div>
+        <div class="nav-dot"></div>
+        <div class="nav-dot"></div>
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.nav-dot');
+        
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                slides[index].scrollIntoView({ behavior: 'smooth' });
+                dots.forEach(d => d.classList.remove('active'));
+                dot.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
