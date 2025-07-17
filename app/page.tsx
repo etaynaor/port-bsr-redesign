@@ -266,7 +266,7 @@ function TitleSlide() {
           </div>
           <div className="bg-white/90 backdrop-blur-sm rounded-2xl md:rounded-3xl p-4 md:p-8 max-w-xl md:max-w-2xl mx-auto shadow-2xl border-2 border-purple-200">
             <p className="text-base md:text-xl text-purple-900 font-medium leading-relaxed">
-              Strategic Creative Leadership &amp; Cultural Innovation
+              Hi friend, here's my portfolio
             </p>
           </div>
         </div>
@@ -331,9 +331,7 @@ function AboutSlide() {
               15+ years leading creative strategy for global brands
             </h3>
             <p className="text-base text-purple-800 leading-relaxed">
-              Over the past 15+ years, I've been sharing aha moments with companies, startups, and movements – and
-              turning them into bold execution. I've worked with major brands like Spotify, Budweiser, and SodaStream,
-              early-stage startups, and national campaigns.
+              Over the past 15+ years, I've been sharing aha moments with companies, startups, and movements – and turning them into bold execution. I've worked with major brands like Spotify, Budweiser, and SodaStream, early-stage startups, human rights organizations and election campaigns.
             </p>
           </div>
 
