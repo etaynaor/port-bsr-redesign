@@ -2,12 +2,11 @@ name: Compress images
 
 permissions:
   contents: write
-  pull-requests: write
+  pull-requests: write   # leave even though you’re on push
 
 on:
   push:
-    branches: [ main ]
-  workflow_dispatch:
+    branches: [main]
 
 jobs:
   optimise:
@@ -17,5 +16,6 @@ jobs:
       - uses: calibreapp/image-actions@main
         with:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
+          compressOnly: true            # <- **required** when you call it from push
           jpegQuality: 75
           pngQuality: 75
