@@ -11,7 +11,6 @@ export default function Portfolio() {
   const slides = [
     { component: <TitleSlide />, title: "Title" },
     { component: <AboutSlide />, title: "About" },
-    { component: <CapabilitiesSlide />, title: "Capabilities" },
     { component: <PortfolioDivider />, title: "Portfolio" },
     { component: <SodaStreamIntroSlide />, title: "SodaStream Intro" },
     { component: <SodaStreamDetailSlide />, title: "SodaStream Details" },
@@ -21,6 +20,7 @@ export default function Portfolio() {
     { component: <TourismDetailSlide />, title: "Tourism Details" },
     { component: <MaccabeeIntroSlide />, title: "Maccabee Intro" },
     { component: <MaccabeeDetailSlide />, title: "Maccabee Details" },
+    { component: <CapabilitiesSlide />, title: "Capabilities" },
     { component: <ThankYouSlide />, title: "Thank You" },
   ]
 
@@ -261,7 +261,7 @@ function TitleSlide() {
             <img
               src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/freepik_assistant_1752747533350-l7w48Zbqk0vjy7pFj7HBrnGTruyj9W.png"
               alt="Etay Naor Creative Leader"
-              className="mx-auto max-w-2xl md:max-w-4xl w-full drop-shadow-2xl"
+              className="mx-auto max-w-3xl md:max-w-4xl w-full drop-shadow-2xl"
             />
           </div>
           <div className="bg-white/90 backdrop-blur-sm rounded-2xl md:rounded-3xl p-4 md:p-8 max-w-xl md:max-w-2xl mx-auto shadow-2xl border-2 border-purple-200">
@@ -1340,61 +1340,62 @@ function CapabilitiesSlide() {
       <CreativeBurst className="bottom-0 left-0 opacity-25" size="medium" />
       <CreativeBurst className="bottom-0 right-0 opacity-25" size="large" />
 
-      <div className="max-w-7xl mx-auto h-full flex flex-col relative z-10 pb-24 md:pb-24">
+      <div className="max-w-7xl mx-auto h-full flex flex-col relative z-10 pb-20 md:pb-24">
         {/* Larger title for mobile */}
-        <div className="text-center mb-6 md:mb-8">
-          <h1 className="text-2xl md:text-4xl font-black text-white mb-4 md:mb-6 tracking-tight">
+        <div className="text-center mb-4 md:mb-8">
+          <h1 className="text-2xl md:text-4xl font-black text-white mb-2 md:mb-6 tracking-tight">
             STRATEGIC CAPABILITIES
           </h1>
         </div>
 
-        {/* Even spacing for mobile cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 flex-1 overflow-y-auto">
-          {/* LEFT column */}
-          <div className="flex flex-col gap-4 md:gap-6">
-            <CapabilityCard
-              color="pink"
-              title="Strategic Creative Leadership"
-              bullets={[
-                "Develop creative strategies for global brands and startups",
-                "Transform complex positioning challenges into clear creative direction",
-                "Lead strategic thinking across diverse client contexts",
-              ]}
-            />
+        {/* Mobile: Single column with proper spacing, Desktop: Two columns */}
+        <div className="flex-1 overflow-y-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6 max-h-full">
+            {/* LEFT column */}
+            <div className="flex flex-col gap-3 md:gap-6">
+              <CapabilityCard
+                color="pink"
+                title="Strategic Creative Leadership"
+                bullets={[
+                  "Develop creative strategies for global brands and startups",
+                  "Transform complex positioning challenges into clear creative direction",
+                  "Lead strategic thinking across diverse client contexts",
+                ]}
+              />
 
-            <CapabilityCard
-              color="cyan"
-              title="Cultural Trend Intelligence"
-              bullets={[
-                "Identify emerging cultural moments and translate them into brand opportunities",
-                "Understand where culture is heading before it becomes mainstream",
-                "Connect authentic cultural insights to strategic creative work",
-              ]}
-            />
-          </div>
+              <CapabilityCard
+                color="cyan"
+                title="Cultural Trend Intelligence"
+                bullets={[
+                  "Identify emerging cultural moments and translate them into brand opportunities",
+                  "Understand where culture is heading before it becomes mainstream",
+                  "Connect authentic cultural insights to strategic creative work",
+                ]}
+              />
+            </div>
 
-          {/* RIGHT column */}
-          <div className="flex flex-col gap-4 md:gap-6">
-            <CapabilityCard
-              color="yellow"
-              title="AI-Enhanced Innovation"
-              bullets={[
-                "AI-first strategic creative development",
-                "Rapid concept prototyping & creative exploration",
-                "Accelerated strategic iteration cycles",
-                "Emerging tech integration in creative strategy",
-              ]}
-            />
+            {/* RIGHT column */}
+            <div className="flex flex-col gap-3 md:gap-6">
+              <CapabilityCard
+                color="yellow"
+                title="AI-Enhanced Innovation"
+                bullets={[
+                  "AI-first strategic creative development",
+                  "Rapid concept prototyping & creative exploration",
+                  "Emerging tech integration in creative strategy",
+                ]}
+              />
 
-            <CapabilityCard
-              color="purple"
-              title="Cross-Functional Coordination"
-              bullets={[
-                "Lead multidisciplinary teams including designers, developers, and strategists",
-                "Coordinate complex creative projects across different skill sets",
-                "Bridge strategic thinking with creative execution",
-              ]}
-            />
+              <CapabilityCard
+                color="purple"
+                title="Cross-Functional Coordination"
+                bullets={[
+                  "Lead multidisciplinary teams including designers, developers, and strategists",
+                  "Coordinate complex creative projects across different skill sets",
+                  "Bridge strategic thinking with creative execution",
+                ]}
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -1421,18 +1422,20 @@ function CapabilityCard({
 
   return (
     <div
-      className={`bg-white/95 backdrop-blur-sm rounded-2xl md:rounded-3xl p-4 md:p-5 shadow-2xl border-l-4 md:border-l-8 border-${colors[color]}`}
+      className={`bg-white/95 backdrop-blur-sm rounded-xl md:rounded-3xl p-3 md:p-5 shadow-2xl border-l-4 md:border-l-8 border-${colors[color]} min-h-0`}
     >
       <div className="flex items-center mb-2 md:mb-3">
-        <div className={`w-3 h-3 md:w-4 md:h-4 bg-${colors[color]} rounded-full mr-2 md:mr-3`} />
-        <h3 className="text-sm md:text-lg font-bold text-purple-900">{title}</h3>
+        <div className={`w-2 h-2 md:w-4 md:h-4 bg-${colors[color]} rounded-full mr-2 md:mr-3 flex-shrink-0`} />
+        <h3 className="text-sm md:text-lg font-bold text-purple-900 leading-tight">{title}</h3>
       </div>
 
       <ul className="space-y-1 md:space-y-2 text-xs md:text-sm text-purple-800">
         {bullets.map((b, i) => (
           <li key={i} className="flex items-start gap-2">
-            <span className={`text-${colors[color].replace("-400", "")}-500 mt-1 text-xs md:text-base`}>•</span>
-            <span>{b}</span>
+            <span className={`text-${colors[color].replace("-400", "")}-500 mt-0.5 text-xs md:text-base flex-shrink-0`}>
+              •
+            </span>
+            <span className="leading-relaxed">{b}</span>
           </li>
         ))}
       </ul>
