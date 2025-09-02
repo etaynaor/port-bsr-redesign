@@ -3,8 +3,8 @@
   "url": "https://www.nicolasbussiere.com/?ref=land-book.com",
   "title": "Nicolas Bussière — Multidisciplinary Designer",
   "paths": {
-    "desktop": "public/refshots/nicolasbussiere-com/desktop.jpg",
-    "mobile": "public/refshots/nicolasbussiere-com/mobile.jpg"
+    "desktop": "public/refshots/nicolasbussiere-com/desktop.png",
+    "mobile": "public/refshots/nicolasbussiere-com/mobile.png"
   },
   "console": { "errors": 1, "warnings": 0 },
   "network": { "failed": 0 },

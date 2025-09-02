@@ -1,47 +1,11 @@
 [
-  {
-    "slug": "quartzo-studio",
-    "url": "https://quartzo.studio/?ref=land-book.com",
-    "title": "/qua'rt:zo/ ☺︎ quartzo studio"
-  },
-  {
-    "slug": "nicolasbussiere-com",
-    "url": "https://www.nicolasbussiere.com/?ref=land-book.com",
-    "title": "Nicolas Bussiere"
-  },
-  {
-    "slug": "interise-co",
-    "url": "https://www.interise.co/?ref=land-book.com",
-    "title": "Interise"
-  },
-  {
-    "slug": "bloomparis-tv",
-    "url": "https://bloomparis.tv/?ref=land-book.com",
-    "title": "Bloom Paris"
-  },
-  {
-    "slug": "bradleyziffer-com",
-    "url": "https://bradleyziffer.com/",
-    "title": "Bradley Ziffer"
-  },
-  {
-    "slug": "dotconor-com",
-    "url": "https://www.dotconor.com/?ref=seesaw",
-    "title": "Conor Dowling"
-  },
-  {
-    "slug": "danielsun-space",
-    "url": "https://danielsun.space/",
-    "title": "Daniel Sun"
-  },
-  {
-    "slug": "pavlosanchez-com",
-    "url": "https://pavlosanchez.com/",
-    "title": "Pavlo Sanchez"
-  },
-  {
-    "slug": "onur-design",
-    "url": "https://www.onur.design/",
-    "title": "Onur Ozkaya"
-  }
+  { "slug": "quartzo-studio", "url": "https://quartzo.studio/?ref=land-book.com", "title": "/qua'rt:zo/ ☺︎ quartzo studio" },
+  { "slug": "nicolasbussiere-com", "url": "https://www.nicolasbussiere.com/?ref=land-book.com", "title": "Nicolas Bussière — Multidisciplinary Designer" },
+  { "slug": "interise-co", "url": "https://www.interise.co/?ref=land-book.com", "title": "Interise Solutions | Product Design & Development Company" },
+  { "slug": "bloomparis-tv", "url": "https://bloomparis.tv/?ref=land-book.com", "title": "BLOOM. Production Services in France" },
+  { "slug": "bradleyziffer-com", "url": "https://bradleyziffer.com/", "title": "bradley | a builder" },
+  { "slug": "dotconor-com", "url": "https://www.dotconor.com/?ref=seesaw", "title": "Conor O'Hollaren - Product, Design & Strategy" },
+  { "slug": "danielsun-space", "url": "https://danielsun.space/", "title": "Daniel Sun | Top-tier Web and Brand Design partner for SaaS and Web3" },
+  { "slug": "pavlosanchez-com", "url": "https://pavlosanchez.com/", "title": "Pavlo Sánchez" },
+  { "slug": "onur-design", "url": "https://www.onur.design/", "title": "Onur Çoban" }
 ]

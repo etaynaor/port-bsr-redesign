@@ -2,39 +2,28 @@
   "slug": "pavlosanchez-com",
   "url": "https://pavlosanchez.com/",
   "title": "Pavlo Sánchez",
-  "paletteCandidates": [
-    "rgb(0, 0, 0)",
-    "rgba(255, 255, 255, 0)",
-    "rgb(255, 255, 255)",
-    "rgb(98, 41, 255)",
-    "rgb(43, 43, 43)"
-  ],
-  "typography": {
-    "families": ["Times", "Inter", "Farnham Display"],
-    "sizes": {
-      "body": "16px",
-      "p": "18px",
-      "a": "22px"
-    },
-    "leading": {
-      "body": "16px",
-      "p": "28px",
-      "a": "28px"
-    },
-    "colors": {
-      "body": "rgb(0, 0, 0)",
-      "p": "rgb(0, 0, 0)",
-      "a": "rgb(255, 255, 255)"
-    }
+  "paths": {
+    "desktop": "public/refshots/pavlosanchez-com/desktop.jpg",
+    "mobile": "public/refshots/pavlosanchez-com/mobile.jpg"
   },
-  "container": {
-    "width": 390,
-    "left": 0
+  "console": { "errors": 0, "warnings": 2 },
+  "network": { "failed": 0 },
+  "dom": {
+    "header": null,
+    "h1": null,
+    "p": null,
+    "button": null,
+    "link": { "text": "", "href": "https://pavlosanchez.com/" }
   },
-  "consoleErrors": 0,
-  "consoleWarnings": 2,
-  "screenshots": {
-    "desktop": "./public/refshots/pavlosanchez-com/desktop.png",
-    "mobile": "./public/refshots/pavlosanchez-com/mobile.png"
+  "styles": {
+    "fontFamily": "Inter, Times, Farnham Display, serif",
+    "bodyColor": "rgb(0, 0, 0)",
+    "bgColor": "rgb(255, 255, 255)",
+    "linkColor": "rgb(255, 255, 255)"
+  },
+  "notes": {
+    "paletteCandidates": [
+      "rgb(0, 0, 0)", "rgb(255, 255, 255)", "rgb(98, 41, 255)"
+    ]
   }
 }

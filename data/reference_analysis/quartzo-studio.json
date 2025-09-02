@@ -3,8 +3,8 @@
   "url": "https://quartzo.studio/?ref=land-book.com",
   "title": "/qua'rt:zo/ ☺︎ quartzo studio",
   "paths": {
-    "desktop": "public/refshots/quartzo-studio/desktop.jpg",
-    "mobile": "public/refshots/quartzo-studio/mobile.jpg"
+    "desktop": "public/refshots/quartzo-studio/desktop.png",
+    "mobile": "public/refshots/quartzo-studio/mobile.png"
   },
   "console": { "errors": 1, "warnings": 0 },
   "network": { "failed": 1 },

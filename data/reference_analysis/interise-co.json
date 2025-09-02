@@ -3,8 +3,8 @@
   "url": "https://www.interise.co/?ref=land-book.com",
   "title": "Interise Solutions | Product Design & Development Company",
   "paths": {
-    "desktop": "public/refshots/interise-co/desktop.jpg",
-    "mobile": "public/refshots/interise-co/mobile.jpg"
+    "desktop": "public/refshots/interise-co/desktop.png",
+    "mobile": "public/refshots/interise-co/mobile.png"
   },
   "console": { "errors": 0, "warnings": 0 },
   "network": { "failed": 0 },

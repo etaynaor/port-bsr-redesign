@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: 'Etay Naor — Portfolio',
   description: 'Private portfolio for prospects',
   robots: { index: false, follow: false },
+  icons: {
+    icon: '/favicon.svg',
+  },
 }
 
 export default function RootLayout({

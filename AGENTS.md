@@ -35,6 +35,7 @@ Goal
 
 Inputs
 - Reference JSONs: `data/reference_analysis/*.json`
+- **already-captured screenshots** under public/refshots/*  - look at them visually
 - PRD: `./context/prd.md` (acceptance criteria)
 - Principles: `./context/design-principles.md`
 - (If an old style guide exists) `./context/style-guide.md`
@@ -45,12 +46,22 @@ Rules
 - No new dependencies or secret keys without explicit approval.
 
 Write Steps
-1) Load all `data/reference_analysis/*.json` and the three context docs above.
-2) Propose a **Style Direction** and tokens (palette, typography, spacing, radii, shadows, motion), plus key component specs (Buttons, CaseStudyCard, Nav, Section headings).
-3) **Back up any existing style guide** (if present) to `./context/.archive/style-guide-YYYYMMDD-HHMM.md` (create the `.archive/` folder if missing).
-4) **Write** the new guide to `./context/style-guide.md` using the *exact structure* in **Format** below.
-5) Echo the full file content in the reply, then print a minimal git diff snippet and a 1-line conventional commit message (do not auto-commit unless asked).
-6) Optional: run the **Design Reviewer (Visual)** task with the new tokens to validate screenshots + logs; report any regressions and propose one smallest fix.
+1) List reference folders under public/refshots/ and, for each, **attach** desktop.jpg + mobile.jpg so the model can visually compare.
+2) From screenshots alone, synthesize:
+   - Style Direction (3–5 adjectives + short paragraph)
+   - Palette (bg/surface/fg + 1–2 accents; hex approximations ok; contrast notes)
+   - Typography (likely stacks, base size/leading mobile/desktop, H1–H3 scale)
+   - Layout & Rhythm (container feel, spacing cadence)
+   - Components (Buttons, CaseStudyCard, Nav desktop+mobile, Section headings)
+   - Motion principles (restrained; prefers-reduced-motion support)
+   - Tailwind Mapping (theme overrides draft for colors/fontFamily/fontSize/radius/shadows)
+   - Usage examples (hero H1, body, buttons, section wrappers)
+3) Load all `data/reference_analysis/*.json` and the three context docs above.
+4) Propose a **Style Direction** and tokens (palette, typography, spacing, radii, shadows, motion), plus key component specs (Buttons, CaseStudyCard, Nav, Section headings).
+5) **Back up any existing style guide** (if present) to `./context/.archive/style-guide-YYYYMMDD-HHMM.md` (create the `.archive/` folder if missing).
+6) **Write** the new guide to `./context/style-guide.md` using the *exact structure* in **Format** below.
+7) Echo the full file content in the reply, then print a minimal git diff snippet and a 1-line conventional commit message (do not auto-commit unless asked).
+
 
 Format (the file you must write to ./context/style-guide.md)
 - Title: “Etay Portfolio — Style Guide”

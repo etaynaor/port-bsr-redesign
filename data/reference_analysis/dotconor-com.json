@@ -2,59 +2,28 @@
   "slug": "dotconor-com",
   "url": "https://www.dotconor.com/?ref=seesaw",
   "title": "Conor O'Hollaren - Product, Design & Strategy",
-  "paletteCandidates": [
-    "rgb(0, 0, 0)",
-    "rgb(198, 198, 198)",
-    "rgb(19, 19, 19)",
-    "rgb(189, 185, 183)",
-    "rgb(44, 44, 44)",
-    "rgb(255, 255, 255)",
-    "rgb(20, 20, 20)",
-    "rgb(208, 208, 208)",
-    "rgba(31, 31, 31, 0.5)",
-    "rgba(189, 185, 183, 0.5)",
-    "rgb(22, 22, 22)",
-    "rgb(36, 35, 35)",
-    "rgb(15, 15, 15)",
-    "rgb(109, 109, 109)",
-    "rgb(189, 189, 189)",
-    "rgb(34, 48, 68)"
-  ],
-  "typography": {
-    "families": ["Sf pro text", "Sf pro display", "Obviously Super"],
-    "sizes": {
-      "body": "20px",
-      "h1": "12px",
-      "p": "62.4px",
-      "a": "10px",
-      "button": null,
-      "nav": null
-    },
-    "leading": {
-      "body": "25.6px",
-      "h1": "10.8px",
-      "p": "39px",
-      "a": "12px",
-      "button": null,
-      "nav": null
-    },
-    "colors": {
-      "body": "rgb(198, 198, 198)",
-      "h1": "rgb(189, 185, 183)",
-      "p": "rgb(198, 198, 198)",
-      "a": "rgb(198, 198, 198)",
-      "button": null,
-      "nav": null
-    }
+  "paths": {
+    "desktop": "public/refshots/dotconor-com/desktop.png",
+    "mobile": "public/refshots/dotconor-com/mobile.png"
   },
-  "container": {
-    "width": 390,
-    "left": 0
+  "console": { "errors": 0, "warnings": 0 },
+  "network": { "failed": 0 },
+  "dom": {
+    "header": null,
+    "h1": null,
+    "p": null,
+    "button": null,
+    "link": { "text": "", "href": "https://www.dotconor.com/" }
   },
-  "consoleErrors": 0,
-  "consoleWarnings": 0,
-  "screenshots": {
-    "desktop": "./public/refshots/dotconor-com/desktop.png",
-    "mobile": "./public/refshots/dotconor-com/mobile.png"
+  "styles": {
+    "fontFamily": "SF Pro, Obviously, sans-serif",
+    "bodyColor": "rgb(198, 198, 198)",
+    "bgColor": "rgb(19, 19, 19)",
+    "linkColor": "rgb(198, 198, 198)"
+  },
+  "notes": {
+    "paletteCandidates": [
+      "rgb(0, 0, 0)", "rgb(198, 198, 198)", "rgb(189, 185, 183)"
+    ]
   }
 }

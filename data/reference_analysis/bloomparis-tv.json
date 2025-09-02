@@ -3,8 +3,8 @@
   "url": "https://bloomparis.tv/?ref=land-book.com",
   "title": "BLOOM. Production Services in France",
   "paths": {
-    "desktop": "public/refshots/bloomparis-tv/desktop.jpg",
-    "mobile": "public/refshots/bloomparis-tv/mobile.jpg"
+    "desktop": "public/refshots/bloomparis-tv/desktop.png",
+    "mobile": "public/refshots/bloomparis-tv/mobile.png"
   },
   "console": { "errors": 0, "warnings": 0 },
   "network": { "failed": 0 },

@@ -1,0 +1,31 @@
+{
+  "url": "http://localhost:3000/new",
+  "paths": {
+    "desktop": "public/refshots/latest/desktop.jpg",
+    "mobile": "public/refshots/latest/mobile.jpg"
+  },
+  "console": {
+    "errors": 0,
+    "warnings": 0,
+    "messages": [
+      {
+        "type": "info",
+        "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"
+      }
+    ]
+  },
+  "network": {
+    "failed": 0
+  },
+  "dom": {
+    "header": "Etay Naor\nWork\nAbout\nContact",
+    "h1": "Clarity, momentum, and creative outcomes",
+    "p": "CREATIVE STRATEGIST",
+    "button": "Open menu☰",
+    "link": {
+      "text": "Skip to content",
+      "href": "#content"
+    }
+  },
+  "title": "Etay Naor — Portfolio"
+}

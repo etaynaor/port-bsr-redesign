@@ -2,52 +2,28 @@
   "slug": "danielsun-space",
   "url": "https://danielsun.space/",
   "title": "Daniel Sun | Top-tier Web and Brand Design partner for SaaS and Web3",
-  "paletteCandidates": [
-    "rgb(0, 0, 0)",
-    "rgb(255, 255, 255)",
-    "rgba(0, 0, 0, 0.5)",
-    "rgba(0, 0, 0, 0.4)",
-    "rgb(245, 245, 245)",
-    "rgba(0, 0, 0, 0.35)",
-    "rgb(0, 0, 238)",
-    "rgb(31, 31, 31)",
-    "rgb(242, 242, 242)",
-    "rgba(0, 0, 0, 0.08)",
-    "rgba(0, 0, 0, 0.75)",
-    "rgba(255, 255, 255, 0.6)",
-    "rgba(255, 221, 0, 0)",
-    "rgba(255, 213, 0, 0.15)",
-    "rgb(255, 213, 0)"
-  ],
-  "typography": {
-    "families": ["sans-serif", "Inter Display"],
-    "sizes": {
-      "body": "12px",
-      "h1": null,
-      "p": "18px",
-      "a": "12px"
-    },
-    "leading": {
-      "body": "normal",
-      "h1": null,
-      "p": "21.6px",
-      "a": "normal"
-    },
-    "colors": {
-      "body": "rgb(0, 0, 0)",
-      "h1": null,
-      "p": "rgba(0, 0, 0, 0.5)",
-      "a": "rgb(0, 0, 238)"
-    }
+  "paths": {
+    "desktop": "public/refshots/danielsun-space/desktop.png",
+    "mobile": "public/refshots/danielsun-space/mobile.png"
   },
-  "container": {
-    "width": 390,
-    "left": 0
+  "console": { "errors": 1, "warnings": 0 },
+  "network": { "failed": 0 },
+  "dom": {
+    "header": null,
+    "h1": null,
+    "p": null,
+    "button": null,
+    "link": { "text": "", "href": "https://danielsun.space/" }
   },
-  "consoleErrors": 1,
-  "consoleWarnings": 0,
-  "screenshots": {
-    "desktop": "./public/refshots/danielsun-space/desktop.png",
-    "mobile": "./public/refshots/danielsun-space/mobile.png"
+  "styles": {
+    "fontFamily": "Inter Display, sans-serif",
+    "bodyColor": "rgb(0, 0, 0)",
+    "bgColor": "rgb(255, 255, 255)",
+    "linkColor": "rgb(0, 0, 238)"
+  },
+  "notes": {
+    "paletteCandidates": [
+      "rgb(0, 0, 0)", "rgb(255, 255, 255)", "rgb(255, 213, 0)"
+    ]
   }
 }
