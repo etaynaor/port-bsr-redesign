@@ -1,0 +1,24 @@
+{
+  "slug": "quartzo-studio",
+  "url": "https://quartzo.studio/?ref=land-book.com",
+  "title": "/qua'rt:zo/ ☺︎ quartzo studio",
+  "paths": {
+    "desktop": "public/refshots/quartzo-studio/desktop.jpg",
+    "mobile": "public/refshots/quartzo-studio/mobile.jpg"
+  },
+  "console": { "errors": 1, "warnings": 0 },
+  "network": { "failed": 1 },
+  "dom": {
+    "header": "Studio →Manifesto →Contact →Bergamo BG, Italy21:12:45",
+    "h1": "Intellectually-stimulating, handcrafted web experiences",
+    "p": "(2025, w/ Yungfrish)",
+    "button": "↑",
+    "link": { "text": "", "href": "https://quartzo.studio/en" }
+  },
+  "styles": {
+    "fontFamily": "monumentGrotesk, \"monumentGrotesk Fallback\"",
+    "bodyColor": "rgba(0, 0, 0, 0.85)",
+    "bgColor": "rgb(212, 212, 209)",
+    "linkColor": "rgba(0, 0, 0, 0.85)"
+  }
+}

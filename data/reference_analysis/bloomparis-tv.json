@@ -1,0 +1,24 @@
+{
+  "slug": "bloomparis-tv",
+  "url": "https://bloomparis.tv/?ref=land-book.com",
+  "title": "BLOOM. Production Services in France",
+  "paths": {
+    "desktop": "public/refshots/bloomparis-tv/desktop.jpg",
+    "mobile": "public/refshots/bloomparis-tv/mobile.jpg"
+  },
+  "console": { "errors": 0, "warnings": 0 },
+  "network": { "failed": 0 },
+  "dom": {
+    "header": "Work Services About Contact Menu Close",
+    "h1": "FULL PRODUCTIONSERVICES STUDIOBASED IN PARIS",
+    "p": null,
+    "button": "",
+    "link": { "text": "", "href": "https://bloomparis.tv/" }
+  },
+  "styles": {
+    "fontFamily": "PPNeueMontreal, sans-serif",
+    "bodyColor": "rgb(211, 216, 225)",
+    "bgColor": "rgb(21, 22, 27)",
+    "linkColor": "rgb(211, 216, 225)"
+  }
+}

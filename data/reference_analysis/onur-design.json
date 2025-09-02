@@ -1,0 +1,42 @@
+{
+  "slug": "onur-design",
+  "url": "https://www.onur.design/",
+  "title": "Onur Çoban",
+  "paletteCandidates": [
+    "rgb(0, 0, 0)",
+    "rgb(157, 158, 160)",
+    "rgb(255, 255, 255)",
+    "rgb(172, 176, 183)"
+  ],
+  "typography": {
+    "families": ["NHaasGroteskTXPro-65Md", "Helvetica", "Arial"],
+    "sizes": {
+      "body": "16px",
+      "h1": "24px",
+      "p": "16px",
+      "a": "16px"
+    },
+    "leading": {
+      "body": "16px",
+      "h1": "30px",
+      "p": "22px",
+      "a": "20px"
+    },
+    "colors": {
+      "body": "rgb(0, 0, 0)",
+      "h1": "rgb(0, 0, 0)",
+      "p": "rgb(0, 0, 0)",
+      "a": "rgb(157, 158, 160)"
+    }
+  },
+  "container": {
+    "width": 390,
+    "left": 0
+  },
+  "consoleErrors": 0,
+  "consoleWarnings": 0,
+  "screenshots": {
+    "desktop": "./public/refshots/onur-design/desktop.png",
+    "mobile": "./public/refshots/onur-design/mobile.png"
+  }
+}

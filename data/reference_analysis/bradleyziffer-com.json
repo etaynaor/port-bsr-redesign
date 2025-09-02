@@ -1,0 +1,53 @@
+{
+  "slug": "bradleyziffer-com",
+  "url": "https://bradleyziffer.com/",
+  "title": "bradley | a builder",
+  "paletteCandidates": [
+    "rgb(0, 0, 0)",
+    "rgb(255, 255, 255)",
+    "rgb(15, 17, 17)",
+    "rgb(0, 0, 238)",
+    "rgba(5, 154, 255, 0.15)",
+    "rgb(0, 71, 204)",
+    "rgba(255, 255, 255, 0)",
+    "rgb(153, 238, 255)",
+    "rgb(68, 204, 255)"
+  ],
+  "typography": {
+    "families": ["sans-serif", "Inter"],
+    "sizes": {
+      "body": "12px",
+      "h1": null,
+      "p": "48px",
+      "a": "12px",
+      "button": null,
+      "nav": null
+    },
+    "leading": {
+      "body": "normal",
+      "h1": null,
+      "p": "52.32px",
+      "a": "normal",
+      "button": null,
+      "nav": null
+    },
+    "colors": {
+      "body": "rgb(0, 0, 0)",
+      "h1": null,
+      "p": "rgb(0, 0, 0)",
+      "a": "rgb(0, 0, 238)",
+      "button": null,
+      "nav": null
+    }
+  },
+  "container": {
+    "width": 390,
+    "left": 0
+  },
+  "consoleErrors": 0,
+  "consoleWarnings": 1,
+  "screenshots": {
+    "desktop": "./public/refshots/bradleyziffer-com/desktop.png",
+    "mobile": "./public/refshots/bradleyziffer-com/mobile.png"
+  }
+}

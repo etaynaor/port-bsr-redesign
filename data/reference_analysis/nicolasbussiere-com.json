@@ -1,0 +1,24 @@
+{
+  "slug": "nicolasbussiere-com",
+  "url": "https://www.nicolasbussiere.com/?ref=land-book.com",
+  "title": "Nicolas Bussière — Multidisciplinary Designer",
+  "paths": {
+    "desktop": "public/refshots/nicolasbussiere-com/desktop.jpg",
+    "mobile": "public/refshots/nicolasbussiere-com/mobile.jpg"
+  },
+  "console": { "errors": 1, "warnings": 0 },
+  "network": { "failed": 0 },
+  "dom": {
+    "header": "MenuHomepageContactCloseWorkNotesServicesProfileLabContactIndexSearchTheme: lightInstagram, LinkedInEnter your search (eg: work, note, publication...)All Work Notes Distinctions & Awards Publications",
+    "h1": "Multi¬disciplinaryDesigner",
+    "p": "Instagram, LinkedIn",
+    "button": "Menu",
+    "link": { "text": "Homepage", "href": "https://www.nicolasbussiere.com/" }
+  },
+  "styles": {
+    "fontFamily": "Times",
+    "bodyColor": "rgb(17, 18, 19)",
+    "bgColor": "rgb(255, 255, 255)",
+    "linkColor": "rgb(17, 18, 19)"
+  }
+}
