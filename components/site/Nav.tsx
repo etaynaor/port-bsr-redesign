@@ -5,8 +5,7 @@ import Image from 'next/image'
 export default function Nav() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
-  // Hydration-safe theme: start as light on both server and client; then sync after mount.
-  const [theme, setTheme] = useState<'light' | 'dark'>('light')
+  // Simplified theme state - let DOM be the source of truth
   const [mounted, setMounted] = useState(false)
   const menuButtonRef = useRef<HTMLButtonElement>(null)
   const closeButtonRef = useRef<HTMLButtonElement>(null)
@@ -33,93 +32,75 @@ export default function Nav() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  // After mount, resolve preferred theme and apply.
+  // Simple mount detection
   useEffect(() => {
     setMounted(true)
-    
-    // Get the current theme from the DOM (set by the layout script)
-    const isDark = document.documentElement.classList.contains('dark')
-    const currentTheme = isDark ? 'dark' : 'light'
-    
-    // Also check localStorage as fallback
-    const saved = typeof window !== 'undefined' ? (window.localStorage.getItem('theme') as 'light' | 'dark' | null) : null
-    const prefersDark = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
-    const next = saved ?? (prefersDark ? 'dark' : 'light')
-    
-    // Use the DOM state if it differs from localStorage
-    const finalTheme = isDark !== (next === 'dark') ? currentTheme : next
-    setTheme(finalTheme)
-    
-    // Ensure DOM is in sync with all necessary elements
-    document.documentElement.classList.toggle('dark', finalTheme === 'dark')
-    document.body.classList.toggle('dark', finalTheme === 'dark')
-    try { 
-      document.getElementById('__next')?.classList.toggle('dark', finalTheme === 'dark')
-    } catch (_) {}
-    try { 
-      document.querySelector('[data-theme-root]')?.classList.toggle('dark', finalTheme === 'dark')
-    } catch (_) {}
   }, [])
 
-  // Persist on change post-mount
-  useEffect(() => {
-    if (!mounted) return
+  // Simple toggle function that works regardless of React state
+  const toggleTheme = (e: React.MouseEvent) => {
+    e.preventDefault()
+    e.stopPropagation()
     
-    // Apply to all necessary DOM elements
-    document.documentElement.classList.toggle('dark', theme === 'dark')
-    document.body.classList.toggle('dark', theme === 'dark')
-    try { 
-      document.getElementById('__next')?.classList.toggle('dark', theme === 'dark')
-    } catch (_) {}
-    try { 
-      document.querySelector('[data-theme-root]')?.classList.toggle('dark', theme === 'dark')
-    } catch (_) {}
+    console.log('Theme toggle clicked!') // Debug log
     
-    // Persist to localStorage
-    window.localStorage.setItem('theme', theme)
+    // Get current state from DOM
+    const isDark = document.documentElement.classList.contains('dark')
+    const newTheme = isDark ? 'light' : 'dark'
     
-    // Set cookie for server-side rendering
-    try { 
-      document.cookie = 'theme=' + theme + '; Path=/; Max-Age=' + (60*60*24*365) + '; SameSite=Lax'
-    } catch (_) {}
+    console.log('Current theme:', isDark ? 'dark' : 'light', '-> New theme:', newTheme) // Debug log
     
-    // Also call the global theme setter if available
-    try { 
-      (window as any).__setTheme?.(theme) 
-    } catch (_) {}
-  }, [theme, mounted])
-
-  const toggleTheme = () => {
-    setTheme(t => {
-      const next = t === 'dark' ? 'light' : 'dark'
+    // Direct DOM manipulation - most reliable approach
+    const apply = (mode: string) => {
+      const on = mode === 'dark'
+      document.documentElement.classList.toggle('dark', on)
+      document.body.classList.toggle('dark', on)
       
-      // Apply immediately to DOM - this is the most important part
-      document.documentElement.classList.toggle('dark', next === 'dark')
-      document.body.classList.toggle('dark', next === 'dark')
+      // Apply to all possible theme containers
+      const containers = [
+        document.getElementById('__next'),
+        document.querySelector('[data-theme-root]'),
+        document.querySelector('main'),
+        document.querySelector('body > div')
+      ]
       
-      // Apply to other elements that need the dark class
-      try { 
-        document.getElementById('__next')?.classList.toggle('dark', next === 'dark')
-      } catch (_) {}
-      try { 
-        document.querySelector('[data-theme-root]')?.classList.toggle('dark', next === 'dark')
-      } catch (_) {}
-      
-      // Persist to localStorage
-      window.localStorage.setItem('theme', next)
-      
-      // Set cookie for server-side rendering
-      try { 
-        document.cookie = 'theme=' + next + '; Path=/; Max-Age=' + (60*60*24*365) + '; SameSite=Lax'
-      } catch (_) {}
-      
-      // Call global theme setter if available
-      try { 
-        (window as any).__setTheme?.(next) 
-      } catch (_) {}
-      
-      return next
+      containers.forEach(el => {
+        if (el) el.classList.toggle('dark', on)
+      })
+    }
+    
+    // Apply theme immediately
+    apply(newTheme)
+    
+    // Persist theme
+    try {
+      localStorage.setItem('theme', newTheme)
+      document.cookie = 'theme=' + newTheme + '; Path=/; Max-Age=' + (60*60*24*365) + '; SameSite=Lax'
+    } catch(_) {}
+    
+    // Also call global setter if available
+    try {
+      if ((window as any).__setTheme) {
+        (window as any).__setTheme(newTheme)
+      }
+    } catch(_) {}
+    
+    // Update button display immediately
+    const buttons = document.querySelectorAll('[aria-label*="Switch to"]')
+    buttons.forEach(button => {
+      const isNowDark = document.documentElement.classList.contains('dark')
+      button.setAttribute('aria-label', isNowDark ? 'Switch to light mode' : 'Switch to dark mode')
+      button.setAttribute('title', isNowDark ? 'Light mode' : 'Dark mode')
+      button.textContent = isNowDark ? '☀︎' : '☾'
     })
+    
+    console.log('Theme toggle complete, new theme:', newTheme) // Debug log
+  }
+
+  // Get current theme from DOM for display
+  const getCurrentTheme = () => {
+    if (!mounted) return 'light' // Default for SSR
+    return document.documentElement.classList.contains('dark') ? 'dark' : 'light'
   }
 
   return (
@@ -137,12 +118,12 @@ export default function Nav() {
           <a className="hover:underline underline-offset-2 focus:outline-2 focus:outline-blue-700" href="#contact">Contact</a>
           <button
             type="button"
-            aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+            aria-label={getCurrentTheme() === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
             onClick={toggleTheme}
             className="hidden md:inline-flex items-center justify-center rounded-lg px-3 py-2 text-brand-fg dark:text-slate-200 focus:outline-2 focus:outline-blue-700"
-            title={theme === 'dark' ? 'Light mode' : 'Dark mode'}
+            title={getCurrentTheme() === 'dark' ? 'Light mode' : 'Dark mode'}
           >
-            {mounted ? (theme === 'dark' ? '☀︎' : '☾') : '☾'}
+            {mounted ? (getCurrentTheme() === 'dark' ? '☀︎' : '☾') : '☾'}
           </button>
         </div>
         <button
@@ -187,12 +168,12 @@ export default function Nav() {
             <div className="p-4 flex justify-between items-center">
               <button
                 type="button"
-                aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+                aria-label={getCurrentTheme() === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
                 onClick={toggleTheme}
                 className="inline-flex items-center justify-center rounded-lg px-3 py-2 text-brand-fg dark:text-slate-200 focus:outline-2 focus:outline-blue-700"
-                title={theme === 'dark' ? 'Light mode' : 'Dark mode'}
+                title={getCurrentTheme() === 'dark' ? 'Light mode' : 'Dark mode'}
               >
-                {theme === 'dark' ? '☀︎' : '☾'}
+                {getCurrentTheme() === 'dark' ? '☀︎' : '☾'}
               </button>
               <button
                 aria-label="Close menu"
