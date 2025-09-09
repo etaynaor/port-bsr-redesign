@@ -36,24 +36,88 @@ export default function Nav() {
   // After mount, resolve preferred theme and apply.
   useEffect(() => {
     setMounted(true)
+    
+    // Get the current theme from the DOM (set by the layout script)
+    const isDark = document.documentElement.classList.contains('dark')
+    const currentTheme = isDark ? 'dark' : 'light'
+    
+    // Also check localStorage as fallback
     const saved = typeof window !== 'undefined' ? (window.localStorage.getItem('theme') as 'light' | 'dark' | null) : null
     const prefersDark = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
     const next = saved ?? (prefersDark ? 'dark' : 'light')
-    setTheme(next)
-    document.documentElement.classList.toggle('dark', next === 'dark')
+    
+    // Use the DOM state if it differs from localStorage
+    const finalTheme = isDark !== (next === 'dark') ? currentTheme : next
+    setTheme(finalTheme)
+    
+    // Ensure DOM is in sync with all necessary elements
+    document.documentElement.classList.toggle('dark', finalTheme === 'dark')
+    document.body.classList.toggle('dark', finalTheme === 'dark')
+    try { 
+      document.getElementById('__next')?.classList.toggle('dark', finalTheme === 'dark')
+    } catch (_) {}
+    try { 
+      document.querySelector('[data-theme-root]')?.classList.toggle('dark', finalTheme === 'dark')
+    } catch (_) {}
   }, [])
 
   // Persist on change post-mount
   useEffect(() => {
     if (!mounted) return
+    
+    // Apply to all necessary DOM elements
     document.documentElement.classList.toggle('dark', theme === 'dark')
+    document.body.classList.toggle('dark', theme === 'dark')
+    try { 
+      document.getElementById('__next')?.classList.toggle('dark', theme === 'dark')
+    } catch (_) {}
+    try { 
+      document.querySelector('[data-theme-root]')?.classList.toggle('dark', theme === 'dark')
+    } catch (_) {}
+    
+    // Persist to localStorage
     window.localStorage.setItem('theme', theme)
+    
+    // Set cookie for server-side rendering
+    try { 
+      document.cookie = 'theme=' + theme + '; Path=/; Max-Age=' + (60*60*24*365) + '; SameSite=Lax'
+    } catch (_) {}
+    
+    // Also call the global theme setter if available
+    try { 
+      (window as any).__setTheme?.(theme) 
+    } catch (_) {}
   }, [theme, mounted])
 
   const toggleTheme = () => {
     setTheme(t => {
       const next = t === 'dark' ? 'light' : 'dark'
-      try { (window as any).__setTheme?.(next) } catch (_) {}
+      
+      // Apply immediately to DOM - this is the most important part
+      document.documentElement.classList.toggle('dark', next === 'dark')
+      document.body.classList.toggle('dark', next === 'dark')
+      
+      // Apply to other elements that need the dark class
+      try { 
+        document.getElementById('__next')?.classList.toggle('dark', next === 'dark')
+      } catch (_) {}
+      try { 
+        document.querySelector('[data-theme-root]')?.classList.toggle('dark', next === 'dark')
+      } catch (_) {}
+      
+      // Persist to localStorage
+      window.localStorage.setItem('theme', next)
+      
+      // Set cookie for server-side rendering
+      try { 
+        document.cookie = 'theme=' + next + '; Path=/; Max-Age=' + (60*60*24*365) + '; SameSite=Lax'
+      } catch (_) {}
+      
+      // Call global theme setter if available
+      try { 
+        (window as any).__setTheme?.(next) 
+      } catch (_) {}
+      
       return next
     })
   }
