@@ -20,7 +20,14 @@ export default function RootLayout({
       <head>
         <script
           dangerouslySetInnerHTML={{
-            __html: `(() => { try { const saved = localStorage.getItem('theme'); const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches; const dark = saved ? saved === 'dark' : prefersDark; document.documentElement.classList.toggle('dark', dark); } catch(_){} })();`,
+            __html: `(() => { try { 
+              const apply = (mode) => { document.documentElement.classList.toggle('dark', mode === 'dark'); };
+              const saved = localStorage.getItem('theme');
+              const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+              const mode = saved ? saved : (prefersDark ? 'dark' : 'light');
+              apply(mode);
+              window.__setTheme = (m) => { try { localStorage.setItem('theme', m); apply(m); } catch(_){} };
+            } catch(_){} })();`,
           }}
         />
         {process.env.NEXT_PUBLIC_CF_WEB_ANALYTICS_TOKEN ? (

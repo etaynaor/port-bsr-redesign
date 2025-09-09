@@ -50,7 +50,13 @@ export default function Nav() {
     window.localStorage.setItem('theme', theme)
   }, [theme, mounted])
 
-  const toggleTheme = () => setTheme(t => (t === 'dark' ? 'light' : 'dark'))
+  const toggleTheme = () => {
+    setTheme(t => {
+      const next = t === 'dark' ? 'light' : 'dark'
+      try { (window as any).__setTheme?.(next) } catch (_) {}
+      return next
+    })
+  }
 
   return (
     <nav className="fixed top-0 inset-x-0 z-50">
