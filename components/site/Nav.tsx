@@ -147,9 +147,18 @@ export default function Nav() {
           {/* Debug button - remove after testing */}
           <button
             type="button"
-            onClick={() => console.log('🎨 Debug button clicked - React is working')}
+            onClick={() => {
+              console.log('🎨 Debug button clicked - React is working!');
+              console.log('🎨 Current DOM state:', {
+                'html.dark': document.documentElement.classList.contains('dark'),
+                'body.dark': document.body.classList.contains('dark'),
+                'localStorage.theme': localStorage.getItem('theme'),
+                'cookie.theme': document.cookie.includes('theme=') ? document.cookie.split(';').find(c => c.trim().startsWith('theme=')) : 'not found'
+              });
+              alert('🎨 Debug button clicked! Check console for details.');
+            }}
             className="hidden md:inline-flex items-center justify-center rounded-lg px-3 py-2 bg-green-500 text-white focus:outline-2 focus:outline-blue-700 ml-2"
-            title="Debug button"
+            title="Debug button - Click to test console logs"
           >
             🔧
           </button>
