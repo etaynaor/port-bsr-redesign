@@ -21,7 +21,15 @@ export default function RootLayout({
         <script
           dangerouslySetInnerHTML={{
             __html: `(() => { try { 
-              const apply = (mode) => { document.documentElement.classList.toggle('dark', mode === 'dark'); };
+              const apply = (mode) => {
+                const on = mode === 'dark';
+                const root = document.documentElement;
+                const body = document.body;
+                root.classList.toggle('dark', on);
+                body.classList.toggle('dark', on);
+                try { document.getElementById('__next')?.classList.toggle('dark', on); } catch(_){}
+                try { document.querySelector('[data-theme-root]')?.classList.toggle('dark', on); } catch(_){}
+              };
               const saved = localStorage.getItem('theme');
               const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
               const mode = saved ? saved : (prefersDark ? 'dark' : 'light');

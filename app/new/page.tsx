@@ -10,7 +10,7 @@ export default function NewPortfolio() {
   const toggle = (id: string) => setOpenId(prev => (prev === id ? null : id))
 
   return (
-    <div className="bg-brand-bg text-brand-fg dark:bg-slate-950 dark:text-slate-100 min-h-screen">
+    <div data-theme-root className="bg-brand-bg text-brand-fg dark:bg-slate-950 dark:text-slate-100 min-h-screen">
       <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:rounded-md focus:bg-brand-fg focus:text-brand-bg focus:px-3 focus:py-2">Skip to content</a>
       <Nav />
 
