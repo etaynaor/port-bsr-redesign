@@ -15,20 +15,20 @@ export const CASE_STUDIES: CaseStudy[] = [
     title: 'SodaStream',
     role: 'Creative Strategist & Campaign Development',
     summary:
-      'Strategic repositioning from utilitarian soda maker to premium environmental lifestyle brand; social-first, celebrity amplified.',
+      'Strategic repositioning to a premium environmental lifestyle brand; social-first, celebrity-amplified — contributed to $2.3B PepsiCo acquisition.',
     problem:
-      'Transform brand perception and growth via social media strategy and clear repositioning toward sustainability.',
+      'Elevate a stagnating brand.',
     approach: [
-      'Repositioned brand as a premium sparkling-water environmental champion',
-      'Social-first content strategy with bold “F*ck Plastic Bottles” messaging',
-      'Smart casting: leveraged Game of Thrones popularity for amplification',
-      'Platform‑native creative across channels to maximize viral potential',
-      'Integrated campaign architecture across multiple touchpoints',
-      'Campaign elements: award‑winning “Shame or Glory” viral video, celebrity spokesperson, Paris Hilton collaborations'
+      'Reframe from “cheap cola at home” to premium sparkling‑water lifestyle with a clear anti‑plastic stance.',
+      'Social‑first content with bold anti‑plastic messaging (e.g., “F*ck Plastic Bottles”)',
+      'Smart casting (incl. Game of Thrones talent) to extend reach',
+      'Channel‑specific creative and cutdowns',
+      'Integrated campaign architecture across touchpoints',
+      'Campaign elements: “Shame or Glory” film, celebrity work (incl. Paris Hilton), creator distribution'
     ],
     outcome: [
-      'Viral success: “Shame or Glory” achieved massive reach',
-      '$2.3B acquisition: repositioning contributed to PepsiCo acquisition',
+      '“Shame or Glory” went viral with broad reach',
+      'Contributed to PepsiCo’s $2.3B acquisition',
       'Award‑winning campaign recognition',
       'Brand elevation: utility → premium lifestyle'
     ],
@@ -41,20 +41,19 @@ export const CASE_STUDIES: CaseStudy[] = [
     title: 'Spotify',
     role: 'Lead Strategic Architect for Market Entry',
     summary:
-      'Creator‑first launch for Israel: authentic musician partnerships, platform‑specific content, integrated OOH/digital.',
+      'Creator‑first launch with local musicians and channel‑specific content; hit ~200% of subscriber targets and ranked among Spotify’s best‑performing markets.',
     problem:
-      'Launch Spotify in Israel with local cultural challenges requiring authentic community integration.',
+      'Launch Spotify in Israel with authentic community integration and creator partnerships; coordinate channel‑specific content with OOH.',
     approach: [
-      'Creator‑first strategy featuring leading Israeli musicians',
-      'Platform‑specific content designed for social amplification',
-      'Integrated campaign across video, OOH, and digital media',
-      'Authentic partnerships with the local music community'
+      'Creator‑first strategy with leading Israeli musicians',
+      'Formats designed to travel on social; disciplined channel edits',
+      'Integrated rollout across video, OOH, and digital',
+      'Deep partnerships with the local music community'
     ],
     outcome: [
-      '200% target achievement: doubled subscriber targets for Israel',
-      'Successful market entry and user acquisition',
-      'Regional recognition as one of Spotify’s most successful launches',
-      'Community building: strong local user base'
+      '~200% target achievement in the launch window',
+      'Recognized internally as one of the stronger market launches',
+      'Strong local community and early adoption'
     ],
     artifacts: [
       { alt: 'Spotify campaign', src: '/spotify-campaign.jpg' }
@@ -63,23 +62,22 @@ export const CASE_STUDIES: CaseStudy[] = [
   {
     id: 'tourism',
     title: 'Israeli Ministry of Tourism',
-    role: 'Creative Strategist',
+    role: 'Creative Strategist & Campaign Development',
     summary:
-      'Multi‑platform European campaign: TV + social amplification positioning Tel Aviv and Jerusalem as short‑break destinations.',
+      'City‑break reframing for Tel Aviv and Jerusalem (TV + social). Tourists up ~38%; hostel bookings up (Tel Aviv ~91%, Jerusalem ~49%).',
     problem:
-      'Fragmented messaging; needed to align to urban city‑break demand across Europe and drive measurable tourism intent.',
+      'Reset Israel’s tourism pitch for young EU travelers.',
     approach: [
-      'Amplified TV with platform‑native social content',
-      'Showcased weather, nightlife, beach, and culture in an urban frame',
-      'Influencer collaborations with weather, lifestyle, and local cultural figures',
-      'Country‑specific adaptations with consistent core story',
-      'Prime‑time TV in Germany, Britain, Russia, Italy; social to landing pages'
+      'Ditch nation‑brand ads. Market Tel Aviv + Jerusalem together as a sunny city‑break for young travelers',
+      'One core campaign with per‑market versions. Sell two specific city breaks: Tel Aviv (sun/nightlife) & Jerusalem (culture/history).',
+      'Prime‑time TV to set the frame; social edits for daily reach',
+      'Weather‑led and vibe‑led cutdowns that show real city rhythm',
+      'Creator integrations and city‑specific landing flows'
     ],
     outcome: [
-      '38% increase in tourists post‑campaign',
-      'Hostel bookings up: 91% Tel Aviv, 49% Jerusalem',
-      '13.5M engaged clicks to landing pages (1+ minute)',
-      'Record‑breaking monthly arrivals'
+      'Tourists up ~38% post‑campaign',
+      'Hostel bookings up (Tel Aviv ~91%, Jerusalem ~49%)',
+      '~13.5M engaged clicks'
     ],
     artifacts: [
       { alt: 'Tourism campaign', src: '/tourist-campaign.jpg' }
@@ -90,20 +88,19 @@ export const CASE_STUDIES: CaseStudy[] = [
     title: 'Maccabee Beer',
     role: 'Brand Transformation Strategist',
     summary:
-      'Social‑led repositioning via creator partnerships; integrated into Tel Aviv’s nightlife and culture.',
+      'Social‑led repositioning via creator partnerships; re‑embedded in Tel Aviv’s nightlife and culture.',
     problem:
-      'Transform a failing beer brand into Tel Aviv’s coolest choice.',
+      'Transform a legacy label into Tel Aviv’s coolest choice.',
     approach: [
-      'Leveraged underdog status as a competitive advantage',
-      'Targeted hipster community via cultural integration',
-      'Built a sustained creator collaboration ecosystem',
-      'Strategic partnerships embedded in nightlife venues'
+      'Leverage underdog status as an advantage',
+      'Build a sustained creator‑collaboration ecosystem',
+      'Partner directly with venues; keep it present in bars and nights',
+      'Support with tight social films and recurring content formats'
     ],
     outcome: [
-      '#2 most‑watched on YouTube Israel',
-      'Cultural icon: “Coolest beer in TLV”',
-      'Most popular pour in bars',
-      'Sustained success via ongoing partnerships'
+      '#2 most‑watched YouTube video in Israel that year',
+      'Widely perceived as “coolest beer in TLV”',
+      'Strong, sustained presence on taps and in venues'
     ],
     artifacts: [
       { alt: 'Maccabee campaign', src: '/maccabee-campaign.jpg' }
