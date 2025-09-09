@@ -159,3 +159,53 @@ Notes
 1) Re-run **Design Reviewer** steps 0–6.
 2) If criteria fail, propose **one smallest fix** and re-snapshot.
 3) Keep diffs atomic; don’t add deps or secrets without explicit approval.
+
+---
+
+## Task: Text Reviewer (Anti-AI Telltales + Brand Voice)
+
+**Goal**
+Ensure all public-facing copy (hero, case-study blurbs, about, CTA) reads human, specific, and on-brand (“executive / premium / minimal”), and **does not** exhibit common AI-style signatures.
+
+**Inputs**
+- Source files: `app/**/*.(tsx|mdx|md)`, `components/**/*.(tsx|mdx)`, `content/**/*`
+- Standards: `./context/prd.md` (esp. §11), `./context/design-principles.md`, `./context/style-guide.md`
+- Optional live text: navigate `http://localhost:3000` and extract visible text for cross-check
+
+**References**
+- Primary: `./context/ai-writing-signs.md` (local mirror of key heuristics; keep this up to date)
+- External (for context only): https://en.m.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing
+
+**What to Flag (AI-style signatures)**
+- Inflated symbolism / generic praise (“stands as a testament…”, “underscores its importance…”)
+- Overused transitions & scaffolding (“Moreover…”, “In this article…”, “Let’s explore…”)
+- Superficial analysis with -ing tails; weasel wording (“many experts say…”)
+- Formulaic patterns (misused “from X to Y”, Title Case Everywhere, excessive bolding)
+- Punctuation tells (overuse of em dashes; curly/straight quotes mixed; inconsistent US/UK English)
+- Citation/link issues (broken, placeholder, mismatched claims)
+
+**Brand Voice & Quality Bar**
+- Executive, restrained, credible; concrete over sweeping claims
+- Reading level ≈ Grade 8–10; short sentences; varied cadence
+- Strong verbs, precise nouns; minimal jargon
+- Consistent English variety; casing & numerals per style guide
+- No SEO fluff; clear, specific CTAs
+
+**Process**
+1) **Collect Text**: read target files; optionally pull visible text from the live page.
+2) **Screen** for AI-telltales + brand-voice issues. For each finding, note:
+   - *Type*: AI-style / Voice / Fact–citation
+   - *Location*: file+line (or section)
+   - *Why*: one sentence
+3) **Propose Rewrites**:
+   - Replace generic claims with specifics (numbers, concrete nouns, brief examples).
+   - Remove filler transitions; vary sentence length; cut hedging/adverbs.
+   - Align terminology, casing, numerals, and quotes to the style guide.
+4) **Output** (Markdown only):
+   - **Summary** (tone/clarity status)
+   - **Findings** (bulleted, grouped by section)
+   - **Rewritten Copy** (full replacement text for each block)
+   - **Git diff** snippet(s) + **1-line conventional commit**
+5) **Optional Visual Check**:
+   - After applying rewrites (or proposing them), navigate `http://localhost:3000` and capture desktop+mobile screenshots to ensure line-wraps/CTA hierarchy still read cleanly.
+
