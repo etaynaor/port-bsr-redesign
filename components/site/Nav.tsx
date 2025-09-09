@@ -103,6 +103,10 @@ export default function Nav() {
     return document.documentElement.classList.contains('dark') ? 'dark' : 'light'
   }
 
+  // Pre-compute theme for rendering to avoid function calls in JSX
+  const currentTheme = getCurrentTheme()
+  const isDark = currentTheme === 'dark'
+
   return (
     <nav className="fixed top-0 inset-x-0 z-50">
       <div className={`mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between bg-white/80 backdrop-blur supports-[backdrop-filter]:bg-white/60 border-b border-slate-200 dark:bg-slate-900/70 dark:supports-[backdrop-filter]:bg-slate-900/60 dark:border-slate-800 ${scrolled ? 'shadow-sm' : ''}`}>
@@ -118,12 +122,12 @@ export default function Nav() {
           <a className="hover:underline underline-offset-2 focus:outline-2 focus:outline-blue-700" href="#contact">Contact</a>
           <button
             type="button"
-            aria-label={getCurrentTheme() === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+            aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
             onClick={toggleTheme}
             className="hidden md:inline-flex items-center justify-center rounded-lg px-3 py-2 text-brand-fg dark:text-slate-200 focus:outline-2 focus:outline-blue-700"
-            title={getCurrentTheme() === 'dark' ? 'Light mode' : 'Dark mode'}
+            title={isDark ? 'Light mode' : 'Dark mode'}
           >
-            {mounted ? (getCurrentTheme() === 'dark' ? '☀︎' : '☾') : '☾'}
+            {mounted ? (isDark ? '☀︎' : '☾') : '☾'}
           </button>
         </div>
         <button
@@ -168,12 +172,12 @@ export default function Nav() {
             <div className="p-4 flex justify-between items-center">
               <button
                 type="button"
-                aria-label={getCurrentTheme() === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+                aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
                 onClick={toggleTheme}
                 className="inline-flex items-center justify-center rounded-lg px-3 py-2 text-brand-fg dark:text-slate-200 focus:outline-2 focus:outline-blue-700"
-                title={getCurrentTheme() === 'dark' ? 'Light mode' : 'Dark mode'}
+                title={isDark ? 'Light mode' : 'Dark mode'}
               >
-                {getCurrentTheme() === 'dark' ? '☀︎' : '☾'}
+                {isDark ? '☀︎' : '☾'}
               </button>
               <button
                 aria-label="Close menu"
