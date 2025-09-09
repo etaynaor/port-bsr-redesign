@@ -26,7 +26,7 @@ export default function NewPortfolio() {
             </p>
             <div className="mt-8 flex items-center gap-4">
               <a href="#work" className="inline-flex items-center justify-center rounded-lg bg-brand-primary text-white px-5 py-3 shadow-md hover:bg-blue-800 focus:outline-2 focus:outline-blue-700 focus:outline-offset-2">Selected Work</a>
-              <a href="mailto:etaynaor@gmail.com" className="inline-flex items-center justify-center rounded-lg border border-slate-200 dark:border-slate-700 text-brand-fg dark:text-slate-100 px-4 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-2 focus:outline-blue-700">Contact</a>
+              <a href="mailto:etay@etaynaor.com" className="inline-flex items-center justify-center rounded-lg border border-slate-200 dark:border-slate-700 text-brand-fg dark:text-slate-100 px-4 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-2 focus:outline-blue-700">Contact</a>
             </div>
           </div>
           <div className="md:col-span-5 py-8 hidden md:flex md:justify-end">
@@ -96,7 +96,7 @@ export default function NewPortfolio() {
             <h2 className="text-h2 font-semibold tracking-[-0.005em]">Contact me</h2>
             <p className="mt-6 text-body md:text-body-lg text-brand-fg/80 dark:text-slate-300">Always happy to hear from you</p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="mailto:etaynaor@gmail.com" className="inline-flex items-center justify-center rounded-lg bg-brand-primary text-white px-6 py-3 shadow-md hover:bg-blue-800 focus:outline-2 focus:outline-blue-700 focus:outline-offset-2">Send a message</a>
+              <a href="mailto:etay@etaynaor.com" className="inline-flex items-center justify-center rounded-lg bg-brand-primary text-white px-6 py-3 shadow-md hover:bg-blue-800 focus:outline-2 focus:outline-blue-700 focus:outline-offset-2">Send a message</a>
             </div>
           </div>
         </section>
@@ -105,7 +105,7 @@ export default function NewPortfolio() {
       <footer className="border-t border-slate-200 dark:border-slate-800 py-6">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-sm text-slate-600 dark:text-slate-400 flex items-center justify-between">
           <span>© {new Date().getFullYear()} Etay Naor</span>
-          <a href="mailto:etaynaor@gmail.com" className="hidden sm:block hover:underline underline-offset-2">Email</a>
+          <a href="mailto:etay@etaynaor.com" className="hidden sm:block hover:underline underline-offset-2">Email</a>
         </div>
       </footer>
     </div>

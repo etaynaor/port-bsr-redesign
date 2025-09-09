@@ -55,7 +55,7 @@ export default function CaseStudyCard({ data, open, onToggle }: Props) {
           <p className="hidden md:block text-body mt-2 max-w-[65ch] text-brand-fg/85 dark:text-slate-300">{data.summary}</p>
         </div>
         <button
-          className="shrink-0 rounded-lg border border-slate-200 px-3 py-2 text-sm hover:bg-slate-50 focus:outline-2 focus:outline-blue-700"
+          className="shrink-0 rounded-lg border border-slate-200 dark:border-slate-700 bg-transparent px-3 py-2 text-sm text-brand-fg dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800 active:bg-slate-200 dark:active:bg-slate-700 transition-colors focus:outline-2 focus:outline-blue-700"
           aria-expanded={open}
           aria-controls={contentId}
           onClick={(e) => { e.stopPropagation(); onToggle() }}
