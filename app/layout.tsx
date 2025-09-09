@@ -23,6 +23,13 @@ export default function RootLayout({
             __html: `(() => { try { const saved = localStorage.getItem('theme'); const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches; const dark = saved ? saved === 'dark' : prefersDark; document.documentElement.classList.toggle('dark', dark); } catch(_){} })();`,
           }}
         />
+        {process.env.NEXT_PUBLIC_CF_WEB_ANALYTICS_TOKEN ? (
+          <script
+            defer
+            src="https://static.cloudflareinsights.com/beacon.min.js"
+            data-cf-beacon={`{\"token\": \"${process.env.NEXT_PUBLIC_CF_WEB_ANALYTICS_TOKEN}\"}`}
+          />
+        ) : null}
       </head>
       <body suppressHydrationWarning={true}>
         <a href="#content" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:rounded-md focus:bg-foreground focus:text-background focus:px-3 focus:py-2">
