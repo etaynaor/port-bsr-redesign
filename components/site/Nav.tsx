@@ -41,21 +41,23 @@ export default function Nav() {
   const toggleTheme = (e: React.MouseEvent) => {
     e.preventDefault()
     e.stopPropagation()
-    
-    console.log('Theme toggle clicked!') // Debug log
-    
+
+    console.log('🎨 Theme toggle clicked!') // Debug log
+
     // Get current state from DOM
     const isDark = document.documentElement.classList.contains('dark')
     const newTheme = isDark ? 'light' : 'dark'
-    
-    console.log('Current theme:', isDark ? 'dark' : 'light', '-> New theme:', newTheme) // Debug log
-    
+
+    console.log('🎨 Current theme:', isDark ? 'dark' : 'light', '-> New theme:', newTheme)
+
     // Direct DOM manipulation - most reliable approach
     const apply = (mode: string) => {
       const on = mode === 'dark'
+      console.log('🎨 Applying theme:', mode, 'dark class:', on ? 'adding' : 'removing')
+
       document.documentElement.classList.toggle('dark', on)
       document.body.classList.toggle('dark', on)
-      
+
       // Apply to all possible theme containers
       const containers = [
         document.getElementById('__next'),
@@ -63,28 +65,39 @@ export default function Nav() {
         document.querySelector('main'),
         document.querySelector('body > div')
       ]
-      
-      containers.forEach(el => {
-        if (el) el.classList.toggle('dark', on)
+
+      containers.forEach((el, i) => {
+        if (el) {
+          el.classList.toggle('dark', on)
+          console.log('🎨 Applied to container', i, ':', el.tagName, 'dark class:', on ? 'added' : 'removed')
+        }
       })
     }
-    
+
     // Apply theme immediately
     apply(newTheme)
-    
+
     // Persist theme
     try {
       localStorage.setItem('theme', newTheme)
       document.cookie = 'theme=' + newTheme + '; Path=/; Max-Age=' + (60*60*24*365) + '; SameSite=Lax'
-    } catch(_) {}
-    
+      console.log('🎨 Theme persisted to localStorage and cookie')
+    } catch(error) {
+      console.error('🎨 Failed to persist theme:', error)
+    }
+
     // Also call global setter if available
     try {
       if ((window as any).__setTheme) {
+        console.log('🎨 Calling global __setTheme')
         (window as any).__setTheme(newTheme)
+      } else {
+        console.log('🎨 Global __setTheme not available')
       }
-    } catch(_) {}
-    
+    } catch(error) {
+      console.error('🎨 Error with global setter:', error)
+    }
+
     // Update button display immediately
     const buttons = document.querySelectorAll('[aria-label*="Switch to"]')
     buttons.forEach(button => {
@@ -93,8 +106,10 @@ export default function Nav() {
       button.setAttribute('title', isNowDark ? 'Light mode' : 'Dark mode')
       button.textContent = isNowDark ? '☀︎' : '☾'
     })
-    
-    console.log('Theme toggle complete, new theme:', newTheme) // Debug log
+
+    console.log('🎨 Theme toggle complete, new theme:', newTheme)
+    console.log('🎨 Final DOM state - html.dark:', document.documentElement.classList.contains('dark'))
+    console.log('🎨 Final DOM state - body.dark:', document.body.classList.contains('dark'))
   }
 
   // Get current theme from DOM for display
@@ -128,6 +143,15 @@ export default function Nav() {
             title={isDark ? 'Light mode' : 'Dark mode'}
           >
             {mounted ? (isDark ? '☀︎' : '☾') : '☾'}
+          </button>
+          {/* Debug button - remove after testing */}
+          <button
+            type="button"
+            onClick={() => console.log('🎨 Debug button clicked - React is working')}
+            className="hidden md:inline-flex items-center justify-center rounded-lg px-3 py-2 bg-green-500 text-white focus:outline-2 focus:outline-blue-700 ml-2"
+            title="Debug button"
+          >
+            🔧
           </button>
         </div>
         <button
