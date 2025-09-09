@@ -26,7 +26,7 @@ export default function RootLayout({
               const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
               const mode = saved ? saved : (prefersDark ? 'dark' : 'light');
               apply(mode);
-              const setCookie = (m) => { try { document.cookie = `theme=${m}; Path=/; Max-Age=${60*60*24*365}; SameSite=Lax`; } catch(_){} };
+              const setCookie = (m) => { try { document.cookie = 'theme=' + m + '; Path=/; Max-Age=' + (60*60*24*365) + '; SameSite=Lax'; } catch(_){} };
               window.__setTheme = (m) => { try { localStorage.setItem('theme', m); setCookie(m); apply(m); } catch(_){} };
               // Re-apply on storage changes or visibility restore
               window.addEventListener('storage', (e) => { if (e.key === 'theme' && e.newValue) apply(e.newValue); });
