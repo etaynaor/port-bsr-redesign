@@ -22,6 +22,8 @@
 
   html {
     scroll-behavior: smooth;
+    /* Hint native UI colors to match theme */
+    color-scheme: light;
   }
 
   body {
@@ -29,6 +31,11 @@
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
     font-variation-settings: normal;
   }
+}
+
+/* When html has .dark, hint native UI for dark */
+.dark {
+  color-scheme: dark;
 }
 
 /* Reduced motion guardrails */
