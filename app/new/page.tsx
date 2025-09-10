@@ -20,7 +20,7 @@ export default function NewPortfolio() {
           <div className="md:col-span-7 py-8">
             <h1 className="text-h1 md:text-[3.75rem] font-semibold tracking-[-0.01em]">Etay Naor</h1>
             <p className="mt-4 text-body md:text-body-lg max-w-[65ch] text-brand-fg/80 dark:text-slate-300">
-              <span>Partner &amp; Lead Strategist, Allenby Concept House.</span>
+              <span>Partner &amp; Lead Strategist, Allenby Concept House.</span>{' '}
               <br className="hidden md:block" />
               <span>Based in Berlin.</span>
             </p>
