@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Etay Naor — Portfolio',
-  description: 'Private portfolio for prospects',
+  title: 'Etay Naor',
+  description: 'Partner & Lead Strategist, Allenby',
   robots: { index: false, follow: false },
   icons: {
     icon: '/favicon.svg',
@@ -16,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning={true}>
       <head>
         <script
           dangerouslySetInnerHTML={{
