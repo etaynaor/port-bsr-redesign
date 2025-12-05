@@ -59,29 +59,6 @@ export const CASE_STUDIES: CaseStudy[] = [
     ]
   },
   {
-    id: 'tourism',
-    title: 'Israeli Ministry of Tourism',
-    role: 'Creative Strategist & Campaign Development',
-    summary:
-      'Repositioned tourism marketing toward young European travelers, emphasizing Tel Aviv and Jerusalem as city-break destinations rather than national branding.',
-    problem:
-      'Reset Israel\'s tourism pitch for young European travelers.',
-    approach: [
-      'Emphasized Tel Aviv and Jerusalem as city-break destinations',
-      'Moved away from national branding toward specific city experiences',
-      'Created integrated campaign across TV and social platforms',
-      'Designed localized content for different markets'
-    ],
-    outcome: [
-      'Tourist arrivals increased ~38%',
-      'Hostel bookings rose significantly (Tel Aviv ~91%, Jerusalem ~49%)',
-      'Generated ~13.5M engaged clicks'
-    ],
-    artifacts: [
-      { alt: 'Tourism campaign', src: '/tourist-campaign.jpg' }
-    ]
-  },
-  {
     id: 'maccabee',
     title: 'Maccabee Beer',
     role: 'Brand Transformation Strategist',

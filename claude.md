@@ -51,16 +51,6 @@ No SEO growth work, no blog/CMS, no analytics or third-party scripts unless expl
 - Brand style guide in `/context/style-guide.md`
 - When making visual (front-end, UI/UX) changes, always refer to these files for guidance
 
-### Quick Visual Check
-IMMEDIATELY after implementing any front-end change:
-1. **Identify what changed** — Review the modified components/sections on the single page  
-2. **Navigate to affected views** — Use `mcp__playwright__browser_navigate` to load `http://localhost:3000` and scroll to the changed section(s)  
-3. **Verify design compliance** — Compare against `/context/design-principles.md` and `/context/style-guide.md`  
-4. **Validate feature implementation** — Ensure the change fulfills the specific request  
-5. **Check acceptance criteria** — Use the list above  
-6. **Capture evidence** — Take **full-page screenshot at desktop viewport (1440px)** of the single page; if relevant, also capture a mobile viewport (~390×844)  
-7. **Check for errors** — Run `mcp__playwright__browser_console_messages`
-
 ### Comprehensive Design Review
 Invoke the `@agent-design-review` subagent for thorough design validation when:
 - Completing significant UI/UX features or layout shifts

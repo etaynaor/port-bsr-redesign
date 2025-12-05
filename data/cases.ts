@@ -60,28 +60,6 @@ export const CASE_STUDIES: CaseStudy[] = [
     featured: true,
   },
   {
-    id: "tourism",
-    client: "Israeli Ministry of Tourism",
-    role: "Creative Strategist",
-    logo: "/israeli-ministry-tourism-logo.png",
-    cover: "/tourist-campaign.jpg",
-    subtitle: "Multi-platform European campaign",
-    summary:
-      "Positioned Tel Aviv and Jerusalem as ideal city-breaks with cross-platform amplification and creators.",
-    challenge:
-      "Shift perception toward urban short-break destinations and drive record tourism.",
-    strategy: [
-      "Amplified TV content across digital",
-      "Weather personalities + lifestyle creators",
-      "Cross-platform urban experience storytelling",
-    ],
-    results: [
-      "Significant tourist growth and engagement",
-      "Record arrivals and bookings",
-    ],
-    featured: true,
-  },
-  {
     id: "maccabee",
     client: "Maccabee Beer",
     role: "Brand Transformation Strategist",
